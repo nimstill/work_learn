@@ -1,0 +1,100 @@
+chmod命令用于改变linux系统文件或目录的访问权限。用它控制文件或目录的访问权限。该命令有两种用法。一种是包含字母和操作符表达式的文字设定法；另一种是包含数字的数字设定法。
+
+centos在yum install报错：Another app is currently holding the yum lock解决方法
+
+*# rm -f /var/run/yum.pid*
+
+
+问题：
+
+ssh: connect to host 192.168.***.** port 22: Connection refused
+
+这是由于对方server的ssh服务没有开。这个server端开启服务即可。 
+
+登陆root帐户，输入 cat  /etc/redhat-release，即可显示系统版本。
+
+输入 uname  -r ，可以查询内核版本。
+
+ 如果没有lftp命令，需要先安装：
+
+    yum install lftp
+
+
+SSH 默认连接到目标主机的 22 端口上,但是由于各种原因你可能需要连接到其他端口.
+
+file:/D:/Mailtech/cmdev/branches/XT5.0.x/template.NG/web.modules/coremail.XT5/src/XT5/test/    $ ssh -p 10022 user@hostname
+
+如上命令就是通过添加参数 -p 指定端口号为 10022.
+
+
+###2016.07.06
+
+window.frameElement
+
+返回嵌入当前window对象的元素(比如 <iframe> 或者 <object>),如果当前window对象已经是顶层窗口,则返回null.
+
+
+    new Dialog({
+        trigger: '#example5',
+        height: '400px'
+    }).before('show',function() {
+        this.set('content', this.activeTrigger.attr('data-src'));
+    });
+
+
+
+
+deferred对象就是jQuery的回调函数解决方案。
+
+dtd.resolve()的意思是，将dtd对象的执行状态从"未完成"改为"已完成"，从而触发done()方法。
+
+还存在一个deferred.reject()方法，作用是将dtd对象的执行状态从"未完成"改为"已失败"，从而触发fail()方法。
+
+jQuery提供了deferred.promise()方法。它的作用是，在原来的deferred对象上返回另一个deferred对象，后者只开放与改变执行状态无关的方法（比如done()方法和fail()方法），屏蔽与改变执行状态有关的方法（比如resolve()方法和reject()方法），从而使得执行状态不能被改变。
+
+
+1） $.Deferred() 生成一个deferred对象。
+
+　　（2） deferred.done() 指定操作成功时的回调函数
+
+　　（3） deferred.fail() 指定操作失败时的回调函数
+
+　　（4） deferred.promise() 没有参数时，返回一个新的deferred对象，该对象的运行状态无法被改变；接受参数时，作用为在参数对象上部署deferred接口。
+
+　　（5） deferred.resolve() 手动改变deferred对象的运行状态为"已完成"，从而立即触发done()方法。
+
+　　（6）deferred.reject() 这个方法与deferred.resolve()正好相反，调用后将deferred对象的运行状态变为"已失败"，从而立即触发fail()方法。
+
+　　（7） $.when() 为多个操作指定回调函数。
+
+除了这些方法以外，deferred对象还有二个重要方法，上面的教程中没有涉及到。
+
+　　（8）deferred.then()
+
+有时为了省事，可以把done()和fail()合在一起写，这就是then()方法。
+
+
+
+**打开项目下的.idea文件夹，找到其中的vcs.xml打开，将<mapping directory="" vcs="" />中的vcs的值清空即可**
+
+
+
+当一个程序开始启动后，stdin, stdout, and stderr are 0, 1,and 2，其它的文件描述符则排在其后。
+
+ Linux的本质就是一切皆文件，输入输出设备也是以文件形式存在和管理的。
+
+内核启动的时候默认打开这三个I/O设备文件：标准输入文件stdin，标准输出文件stdout，标准错误输出文件stderr，分别得到文件描述符 0, 1, 2。
+
+jQuery.inArray()函数用于在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。
+
+
+
+
+2016.07.15
+
+
+断点调试，查看位置出发函数，   
+core  文件proto 函数
+
+熟悉整体布局，函数位置，调用
+
