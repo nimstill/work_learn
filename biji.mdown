@@ -98,3 +98,10 @@ core  文件proto 函数
 
 熟悉整体布局，函数位置，调用
 
+
+
+.sendMessage
+.offMessage
+.subscribe
+.publish
+.unsubscribe

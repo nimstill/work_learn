@@ -259,91 +259,10 @@ module.exports = Pig;
 
 
 
-require.config({
-	packages : [
-	{
-		name: "cui",
-		location: "../../../src"
-	}],
-	paths: {
-		'jquery': ''
-	}
-});
-
-    var testPopup = Overlay.extend({
-        attrs : {
-            trigger: null
-        },
-        setup: function() {
-            var that = this;
-            testPopup.superclass.setup.call(this);
-            this._setPosition();
-            $(this.get('trigger')).click(function() {
-                that.show();
-            });
-            // 需要调用这句话来实现功能
-            this._blurHide(this.get('trigger'));
-        }
-    });
 
 
 
-    var testPopup = Overlay.extend({
-    	attrs : {
-    		trigger: null
-    	},
-    	setup: function() {
-    		var that = this;
-    		testPopup.superclass.setup.call(this);
-    		this._setPosition();
-    		$(this.get('trigger')).click(function() {
-    			that.show();
-    		});
-    		this._blurhide(this.get('trigger'));
-    	}
-    });
 
-
-    popup1.after('show',function() {
-    	console.log('popup1 is show');
-    })after('hide', function() {
-    	console.log('popup1 is hidden ');
-    });
-
-
-    require([
-    "../../../../src/util/history/hash.js"
-], function(HistoryHash) {
-    var one = 1;
-
-    $('#four').on('click', function() {
-        HistoryHash.addHash('four');
-    });
-
-    $('#five').on('click', function() {
-        HistoryHash.addHash({
-            module: 'mail.list',
-            param: {
-                fid: 1,
-                name: 'some'
-            }
-        });
-    });
-
-    $(window).hashchange(function(event, newState, oldState) {
-        console.log(event, newState, oldState, one)
-    });
-});
-
-
-
-HistoryHash.addHash({
-	module: 'mail.list',
-	param: {
-		fid: 1,
-		name: 'some'
-	}
-});
 
 define(id?, dependencies?, factory)
 
