@@ -104,4 +104,37 @@ core  文件proto 函数
 .offMessage
 .subscribe
 .publish
-.unsubscribe
+.unsubscrib
+
+
+
+jQuery的deferred对象详解
+
+deferred对象就是jQuery的回调函数解决方案defer的意思是"延迟"
+为多个操作指定回调函数
+
+deferred对象的另一大好处，就是它允许你为多个事件指定一个回调函数，这是传统写法做不到的。
+
+请看下面的代码，它用到了一个新的方法$.when()：
+
+    　　$.when($.ajax("test1.html"), $.ajax("test2.html"))
+
+    　　.done(function(){ alert("哈哈，成功了！"); })
+
+    　　.fail(function(){ alert("出错啦！"); });
+
+    （运行代码示例4）
+
+这段代码的意思是，先执行两个操作$.ajax("test1.html")和$.ajax("test2.html")，如果都成功了，就运行done()指定的回调函数；如果有一个失败或都失败了，就执行fail()指定的回调函数。
+
+jQuery规定，deferred对象有三种执行状态----未完成，已完成和已失败。如果执行状态是"已完成"（resolved）,deferred对象立刻调用done()方法指定的回调函数；如果执行状态是"已失败"，调用fail()方法指定的回调函数；如果执行状态是"未完成"，则继续等待，或者调用progress()方法指定的回调函数（jQuery1.7版本添加）。
+
+还存在一个deferred.reject()方法，作用是将dtd对象的执行状态从"未完成"改为"已失败"，从而触发fail()方法。
+
+有时为了省事，可以把done()和fail()合在一起写，这就是then()方法。
+
+    　　$.when($.ajax( "/main.php" ))
+
+    　　.then(successFunc, failureFunc );
+
+
