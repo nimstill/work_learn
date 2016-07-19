@@ -138,3 +138,4 @@ jQuery规定，deferred对象有三种执行状态----未完成，已完成和�
     　　.then(successFunc, failureFunc );
 
 
+react sixiang 
