@@ -139,3 +139,15 @@ jQuery规定，deferred对象有三种执行状态----未完成，已完成和�
 
 
 react sixiang 
+if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+} else {
+    sessionStorage.clickcount = 1;
+}
+document.getElementById("result").innerHTML = "you have clicked the button " + sessionStorage.clickcount + "times in this session.";
+
+
+
+
+
+some thing not right , try every detatial
