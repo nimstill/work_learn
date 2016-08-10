@@ -151,3 +151,8 @@ document.getElementById("result").innerHTML = "you have clicked the button " + s
 
 
 some thing not right , try every detatial
+
+>Node
+
+Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances. --- https://developer.mozilla.org...
+
