@@ -156,3 +156,7 @@ some thing not right , try every detatial
 
 Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances. --- https://developer.mozilla.org...
 
+
+
+
+
