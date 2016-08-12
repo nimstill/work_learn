@@ -40,3 +40,48 @@ export default function safe (target) {
 	});
 	target._isSafe = true;
 }
+
+
+var a = 333,
+	b = a;
+b = 555;
+console.log(a);
+
+
+var pageData = {};
+
+loadData(1);
+loadData(2);
+loadData(3);
+
+function loadData(page) {
+	let promise = xxx;
+	promise.then(function(res) {
+		if (res.success) {
+			if (!pageData.data) {
+				pageData.res.data;
+				renderPage(pageData);
+			} else {
+				Object.assign(pageData, res.data);
+				updateStore(pageData);
+			}
+		}
+	},function(err) {
+		//err handle
+	});
+}
+
+
+Object.assign(target, ...sources) 是浅拷贝的
+
+乍看之下因为没什么问题了，But，任凭你怎么刷新页面永远都是第一次渲染出来，后面的就不管你了。
+
+首先，犯了一个很低级的错误，关于cloneDeep的问题，翻一下 MDN文档 可以知道 Object.assign(target, ...sources) 是浅拷贝的，也就是我上面第二次请求回来的数据合并之后并不是正确的数据，因为res.data里面还有多层object，这个容易解决，写一个cloneDeep方法实现即可，这里就不再贴出代码。
+
+合并之后的数据正确了，但是触发updateStore的时候也碰到一个问题，那就是第一次触发updateStore的时候能够正确拿到数据并且渲染第二页的数据，但是再次触发的时候就不渲染第三页的数据了。这就是提到的关于传值跟传址的问题，当第一次触发updateStore的时候传了一个object过去，后面再合并数据之后同样传了一个object过去，但这个object是基于上一个object的基础上复制的，所以导致了指向同一个指针，最简单粗暴的方法就是：
+
+// 简单粗暴的让pageData变成值传递过去
+updateStore(JSON.parse(JSON.stringify(pageData)));
+
+
+
