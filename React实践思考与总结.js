@@ -1,3 +1,8 @@
+from 
+
+http://cnt1992.xyz/2016/08/06/summary-of-react-base-on-practice/
+
+
 import React from 'react';
 import safe from './Safe';
 let _func = React.createElement;
