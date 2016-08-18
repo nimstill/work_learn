@@ -175,3 +175,27 @@ pending: 初始状态，不是fulfilled，也不是rejected.
 fulfilled: 操作成功完成.
 rejected: 操作失败.
 
+CSS雪碧图合并 - 减少请求
+合并压缩CSS跟JavaScript代码 - 减少请求
+CSS代码放在header头部里面，JavaScript代码放到body结束之前 - 因为JavaScript代码执行会阻塞
+然后我们可以自豪地晒出下面的代码片段：
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="xxx.cdn.com/??a.css,b.css" />
+    </head>
+    <body>
+        ...
+        <script src="xxx.cdn.com/??a.js,b.js"></script>
+    </body>
+</html>
+
+
+在每个 HTTP 2.0 的 流 里面有个 优先值 ，这个 优先值 确定着客户端跟服务器处理不同的 流 采取不同的 优先级策略 ，高优先级的应该优先发送，但这不会绝对的（绝对等待会导致 首队阻塞 问题）。在分配处理资源和客户端与服务器间的宽带，不同优先级的混合都是必须的。
+
+HTTP 2.0 新增加 服务器提示 ，可以先于客户端检测到将要请求的资源，提前通知客户端，服务器不发送所有资源的实体，只发送资源的 URL。客户端接到提示后会进行验证缓存，如果发现需要这些资源，则正式发起请求。
+
+HTTP协议从0.9版本开始不断增加新的功能特性，但长远来看都是 向前兼容 的，HTTP 2.0 在 应用层 跟 传输层 之间增加了一个 二进制分帧层，从而能够达到 “在不改动HTTP的语义、HTTP方法、状态码、URI及首部字段的情况下，突破HTTP 1.1的性能限制，改进传输性能，实现低延迟和高吞吐量。”
+
+在 二进制分帧层 上， HTTP 2.0 会将所有传输的信息分割为更小的消息和帧，并对它们采用二进制格式的编码，其中 HTTP 1.1 的首部信息会被封装到 Headers 帧，而 request body 被封装到 Data 帧里面。
