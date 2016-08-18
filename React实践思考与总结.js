@@ -90,3 +90,27 @@ updateStore(JSON.parse(JSON.stringify(pageData)));
 
 
 
+function updateStpreData(Data) {
+	return  {
+		type: 'UPDATESTORE',
+		data: data
+	};
+}
+
+let updateStoreAction = function updateStoreAction(data) {
+	return (dispath, getState) => {
+		dispatch(uppdateStoreData(data));
+	};
+}
+
+export default updateStoreAction;
+
+let middleware = Config.actionMiddlewareList || [];
+middleware.forEach(function (mv) {
+	let funcName = mv.name;
+	if (!funcName) {
+		funcName = mv.toString().match(/^function\s*([^(]+)/)[1];
+	}
+	MoudularizationActions[funcName] = mv;
+});
+
