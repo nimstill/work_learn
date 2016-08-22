@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+		.simple-retangle {
+			margin: 50px auto;
+			width: 200px;
+			height: 200px;
+			border: 40px solid salmon;
+		}
+
+		.colored-border-retangle {
+			margin: 50px auto;
+			width: 200px;
+			height: 200px;
+			border-top: 40px solid coral;
+			border-right: 40px solid lightblue;
+			border-bottom: 40px solid lightgreen;
+			border-left: 40px solid mediumpurple;
+		}
+
+		.colored-border-empty-retangle {
+	        margin: 50px auto;
+	        width: 0;
+	        height: 0;
+	        border-top: 40px solid coral;
+	        border-right: 40px solid lightblue;
+	        border-bottom: 40px solid lightgreen;
+	        border-left: 40px solid mediumpurple;
+    	}
+
+
+    	.triangle-top,
+	    .triangle-right,
+	    .triangle-bottom,
+	    .triangle-left {
+	        margin: 20px auto;
+	        width: 0;
+	        height: 0;
+	        border: 100px solid transparent;
+	    }
+	    
+	    .triangle-top {
+	        border-top-color: coral;
+	    }
+	    
+	    .triangle-right {
+	        border-right-color: lightblue;
+	    }
+	    
+	    .triangle-bottom {
+	        border-bottom-color: lightgreen;
+	    }
+	    
+	    .triangle-left {
+	        border-left-color: mediumpurple;
+	    }
+
+
+	    2
+
+		* {
+		    font-family: simhei, sans-serif;
+		    box-sizing: border-box;
+		}
+		 
+		html {
+		    font-size: 62.5%;
+		}
+		 
+		body {
+		    background-color: lightblue;
+		}
+		 
+		div {
+		    margin: 20px auto;
+		}
+
+
+		.flag {
+		    width: 0;
+		    height: 0;
+		    border: 2rem solid #FF6600;
+		    border-top-width: 4rem;
+		    border-bottom-color: transparent;
+		    border-bottom-width: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="simple-retangle"></div>
+
+	<div class="colored-border-retangle"></div>
+
+	<div class="colored-border-empty-retangle"></div>
+
+
+	<div class="triangle-top"></div>
+	<div class="triangle-right"></div>
+	<div class="triangle-bottom"></div>
+	<div class="triangle-left"></div>
+
+</body>
+</html>
