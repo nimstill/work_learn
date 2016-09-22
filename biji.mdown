@@ -200,3 +200,53 @@ HTTP协议从0.9版本开始不断增加新的功能特性，但长远来看都�
 
 在 二进制分帧层 上， HTTP 2.0 会将所有传输的信息分割为更小的消息和帧，并对它们采用二进制格式的编码，其中 HTTP 1.1 的首部信息会被封装到 Headers 帧，而 request body 被封装到 Data 帧里面。
 
+
+
+
+
+
+[root@Shaoxing ~]# cd /media/VMware\ Tools/          进入光驱（注意Tools前边有空格）
+
+
+
+挂载成功以后 在VMwareTools里边有一个 VMwareTools-9.2.3-1031360.tar.gz  （你的也许不一样）拿去解压
+
+[root@Shaoxing VMware Tools]# tar zxvf VMwareTools-9.2.3-1031360.tar.gz -C /tmp/         解压缩tar包到/tmp 下
+
+[root@Shaoxing VMware Tools]# cd /tmp/vmware-tools-distrib/       进入/tmp
+
+ 
+
+三、安装VMware Tools
+
+[root@localhost vmware-tools-distrib]# ./vmware-install.pl
+ 
+下面的选项就按照默认值。一路回车就可以：
+
+In which directory do you want to install the binary files?
+[/usr/bin]
+
+What is the directory that contains the init directories (rc0.d/ to rc6.d/)?
+
+[/etc/rc.d]
+
+What is the directory that contains the init scripts?
+[/etc/rc.d/init.d]
+
+In which directory do you want to install the daemon files?
+[/usr/sbin]
+
+In which directory do you want to install the library files?
+[/usr/lib/vmware-tools]
+
+The path “/usr/lib/vmware-tools” does not exist currently. This program is goingto create it, including needed parent directories. Is this what you want?
+[yes] .........很多很多东西 回车默认就可以了
+
+Enjoy,
+
+–the VMware team （到此安装完毕了，别玩了下边的一些操作）
+
+
+四、完成安装
+
+记得启用权限 （如果启动了以后还是不能自如的复制粘贴那么请关闭CentOS电源重新打开）
