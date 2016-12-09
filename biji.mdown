@@ -250,3 +250,186 @@ Enjoy,
 四、完成安装
 
 记得启用权限 （如果启动了以后还是不能自如的复制粘贴那么请关闭CentOS电源重新打开）
+
+
+$.proxy 方法接受一个已有的函数，并返回一个带特定上下文的新的函数。
+
+该方法通常用于向上下文指向不同对象的元素添加事件。
+
+
+
+
+
+tag 文件
+
+//先使用taglib指令引入标记库
+
+<%@taglib prefix="look" tagdir="/WEB-INF/tags" %>
+//使用<标记前缀:定义好的标记名>调用标记(注意：标记名和文件名大小写一致)
+
+JSP 引擎把Tag文件转换成Java文件，并编译成class文件供JSP程序动态调用。标记体传给Tag文件， Tag文件使用接受标记体信息。
+
+
+main/modify_pwd
+
+//      {"name": "$common/op_copymail$", "value": "more:copymail"},
+
+tail -f wmsvr.log
+
+
+
+
+
+
+retrun true； 返回正确的处理结果。 
+
+return false；返回错误的处理结果；终止处理；阻止提交表单；阻止执行默认的行为。  
+
+return；把控制权返回给页面。
+
+在js中return false的作用一般是用来取消默认动作的
+
+/////////////////////////////////////////////////////////////
+
+
+
+子容器溢出时，被父容器截断。父容器overflow:hidden。
+子容器溢出时，把父容器撑高。父容器height:auto;overflow:visible或display:table-cell等等。
+子容器溢出时，父容器出现滚动条。父容器overflow:scroll或overflow:auto
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>顶部广告显示数秒后隐藏效果</title>
+<script type="text/javascript" src="/demo/jquery.min.js" ></script>
+<!--  第一种形式原广告显示数秒后隐藏  -->
+<!--<script type="text/javascript">
+$(document).ready(function(){
+    
+    $("#banner").slideDown("slow");     
+})
+ function displayimg(){
+    $("#banner").slideUp("slow");    
+  }
+ 
+  setTimeout("displayimg()",15000);
+  
+</script>-->
+
+<!--  第二种形式原广告显示数秒后大板块隐藏，显示用来重播的标签  -->
+<!--<script type="text/javascript">
+$(document).ready(function(){
+    
+    $("#banner").slideDown("slow");     
+    $("#rightOpen").hide();
+    
+    $("#rightOpen").click(function(){
+        $("#banner").slideDown("slow"); 
+        setTimeout("displayimg()",15000);
+        $("#rightOpen").hide();
+    })
+})
+ function displayimg(){
+    $("#banner").slideUp("slow");   
+        $("#rightOpen").show();  
+  }
+ 
+  setTimeout("displayimg()",15000);
+  
+</script>-->
+
+<!--  第三种形式原广告显示数秒后隐藏，展示小图  -->
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    $("#banner").slideDown("slow"); 
+})
+ function displayimg(){
+    $("#banner").slideUp(1000,function(){
+        $("#top").slideDown(1000);
+    })
+  }
+  setTimeout("displayimg()",10000);
+</script>
+</head>
+
+<body>
+
+<div id="top" style="display:none;"><img  src="http://filesimg.111cn.net/2013/04/25/20130425075611293.jpg" width="980" height="60" /></div>
+<div id="banner" style="width:980px; height:291px; display:none;"><img  src="http://filesimg.111cn.net/2013/04/25/20130425075617437.jpg" width="980" height="291" /></div>
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+/* advbox */
+.advbox{width:990px;margin:0 auto;}
+.advbox .dt_small{width:990px;}
+.advbox .dt_big{width:990px;}
+.advbox .dt_toBig{position:absolute;left:50%;margin:5px 0px 0px 440px;width:49px;height:21px;background:url("images/public_showTL_1201.png");cursor:pointer;}
+.advbox .dt_toSmall{position:absolute;left:50%;margin:5px 0px 0px 440px;width:49px;height:21px;background:url("images/public_closeTL_1201.png");cursor:pointer;}
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>           
+
+<div class="advbox">
+
+    <div class="dt_small" style="display:none;">
+        <div class="dt_toBig" style="display:none;"></div>
+        <a href="http://www.17sucai.com/" target="_blank"><img src="images/1325.jpg" width="990" height="60" alt="jquery广告图片缩略图" /></a>
+    </div>
+    
+    <div class="dt_big">
+        <div class="dt_toSmall"></div>
+        <a href="http://www.17sucai.com/" target="_blank"><img id="actionimg" src="images/sa11.jpg" width="990" height="500" alt="jquery广告图片大图" /></a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+function AdvClick(){
+//定义方法
+    var a=1500;
+    //点击关闭后的的小图显示出来的时间
+    $(".dt_toSmall").click(function(){
+    //定义关闭按钮的点击
+        $(".dt_small").delay(a).slideDown(a);
+        //定义第二轮的点击关闭按钮以后显示出小图片和显示的时间
+        $(".dt_big").stop().slideUp(a);
+        //定义第二轮点击关闭按钮大图片向下移动并消失
+        $(".dt_toBig").delay(a*2).fadeIn(0)
+        //定义显示第二轮的在点击完关闭按钮以后显示出小图片后的小图片的坐上方的重播按钮的显示
+    });
+    $(".dt_toBig").click(function(){
+    //定义重播按钮的事件
+        $(".dt_big").delay(a).slideDown(a);
+        //定义点击完第二轮的重播按钮让大图片显示出来的效果和时间
+        $(".dt_small").stop().slideUp(a);
+        //定义点击完第一轮的重播按钮隐藏小图片
+    })
+}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+//函数规定当 ready 事件发生时执行的代码
+    AdvClick();
+    //实现AdvClick方法
+});
+</script>               
+
+</body>
+</html>
+
+

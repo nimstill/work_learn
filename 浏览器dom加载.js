@@ -13,4 +13,8 @@ one() 方法为被选元素附加一个或多个事件处理程序，并规定�
 逻辑与 (&&)	expr1 && expr2	如果expr1 能转换成false则返回expr1,否则返回expr2. 
 因此, 在Boolean环境中使用时, 两个操作结果都为true时返回true,否则返回false.
 
+IE8parentNode bug
 
+ ['$(\'', partId, '\').style.display=\'\';', '$(\'', allId, '\').style.display=\'none\''].join('');
+
+ 
