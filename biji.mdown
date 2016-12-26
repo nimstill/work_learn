@@ -433,3 +433,21 @@ $(document).ready(function(){
 </html>
 
 
+
+
+###module
+
+ const value = 42;
+ export {value as the_answer};
+
+ var value = 42;
+ export {value as the_answer};
+
+
+
+import {value as the_answer} from './module';
+
+var the_answer require('./module').value;
+
+一个关键点时，导入模块的东西，并不是一个引用或一个值，而是一个类似与被导入模块内部的一个getter对象。所以这可能会导致一些不符合预期的行为。
+
