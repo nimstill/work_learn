@@ -451,3 +451,48 @@ var the_answer require('./module').value;
 
 一个关键点时，导入模块的东西，并不是一个引用或一个值，而是一个类似与被导入模块内部的一个getter对象。所以这可能会导致一些不符合预期的行为。
 
+不论你以何种声明导出变量，它们都是只读的。但是，如果导出的是对象，你可以改变变量的属性。
+
+// module.js
+export let count = 0;
+export const table = {foo: 'bar'};
+ 
+// main.js
+import {count, table} from './module;
+ 
+table.foo = 'Bar'; // OK
+count++; // read-only error
+
+
+*多余字体以...显示*
+
+    text-overflow: ellipsis;
+    width: 99px;
+    height: 77px;
+    margin: 20px auto;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+
+
+new webpack.SourceMapDevToolPlugin({
+    filename: '[file].map'
+})
+
+
+Rx's Hello World
+
+const Observable = Rx.Observable
+const input = document.querySeletor('input')
+
+const serach$ = Observable.fromEvent(input, 'input')
+    .map(e => e.target.value)
+    .filter(value => value.length >= 1)
+    .throttleTime(100)
+    .distinctUntilChanged()
+    .switchMap(term => Observable.fromPromise(wikiIt(term)))
+    .subscribe(
+      x => renderSearchResult(x),
+      err = > console.error(err)
+    )
+
