@@ -105,8 +105,8 @@ $ git rebase origin/master
 
 
 
-###取消 Git for Windows “换行符自动转换”功能
-####git config --global core.autocrlf false
+### 取消 Git for Windows “换行符自动转换”功能
+#### git config --global core.autocrlf false
 
 
 先 git clone 整个仓库，然后 git checkout tag_name 就可以取得 tag 对应的代码了。
@@ -119,3 +119,11 @@ git clone -b <branch> <remote_repo>
 
 
 git ls-remote
+
+### 切换至远程分支
+git checkout -b 2.0.0 origin/2.0.0
+
+#### svn
+它将给出提交标识，评论和所有受影响的文件。
+svn log -v --limit 4
+

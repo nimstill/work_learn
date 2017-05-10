@@ -496,3 +496,23 @@ const serach$ = Observable.fromEvent(input, 'input')
       err = > console.error(err)
     )
 
+
+
+下面列下各个浏览器化如何来监听最小化与最大化的相关code
+//IE
+if(document.addEventListener){
+document.addEventListener('msvisibilitychange',function(){
+console.log(document.msVisibilityState);
+});
+//FF
+if(document.addEventListener){
+document.addEventListener('mozvisibilitychange',function(){
+console.log(document.mozVisibilityState);
+});
+//chrome
+if(document.addEventListener){
+document.addEventListener('webkitvisibilitychange',function(){
+console.log(document.webkitVisibilityState);
+});
+
+}
