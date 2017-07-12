@@ -12,7 +12,10 @@ git push命令用于将本地分支的更新，推送到远程主机。它的格
 
 $ git push <远程主机名> <本地分支名>:<远程git 分支名>
 
-注意，分支推送顺序的写法是<来源地>:<目的地>，所以git pull是<远程分支>:<本地分支>，而git push是<本地分支>:<远程分支>。
+git pull --rebase origin : <branch>
+
+*注意，分支推送顺序的写法是<来源地>:<目的地>，所以git pull是<远程分支>:<本地分支>，而git push是<本地分支>:<远程分支>。*
+
 如果省略远程分支名，则表示将本地分支推送与之存在"追踪关系"的远程分支（通常两者同名），如果该远程分支不存在，则会被新建。
 
 $ git push origin master
@@ -126,4 +129,11 @@ git checkout -b 2.0.0 origin/2.0.0
 #### svn
 它将给出提交标识，评论和所有受影响的文件。
 svn log -v --limit 4
+
+
+// eslint-disable-line
+
+eslint-disable-next-line eqeqeq
+
+// eslint-disable-next-line no-unused-vars
 

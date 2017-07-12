@@ -516,3 +516,19 @@ console.log(document.webkitVisibilityState);
 });
 
 }
+
+
+
+var name = 'hello';
+var a = {
+    name : 'a',
+    getNameFunc : function() {
+        this.name = name;
+        return function() {
+            return this.name;
+        };
+    }
+}
+
+
+//hello
