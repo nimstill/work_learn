@@ -39,4 +39,96 @@ class Person {
 let persong:Person = new Person('muyy', 23)
 console.log(person.print())   //muyy23
 
+class Student extendsPerson {
+    gender:string;
+    constructor(gender:string) {
+        super('muyy',23);
+        this.gender = gender;
+    }
+    tell() {
+        console.log(this.name + this.age + this.gender);
+    }
+}
+
+var student = new Student('mail');
+student.tell();    //muyy23mail
+
+class Hello {
+    private _name: string;
+    private _age: number;
+    get name(): string {
+        return this._name;
+    }
+    set name(value: string) {
+        this.name = value;
+    }
+    get age(): number {
+        return this._age;
+    }
+    set age(age: number) {
+        if(age>0 && age<100) {
+            console.log('age bettwon 0~100');
+            return;
+        }
+        this._age = age;
+    }
+}
+
+let hello = new Hello();
+hello.name = 'muyy';
+hello.age = 23
+console.log(hello.name)
+
+interface LabelValue {
+    label: string;
+}
+
+function printLabel(label: LabelValue) {
+    console.log(labelObj.label);
+}
+
+let myObj = {
+    'label' : 'hello Interface'
+};
+
+printLabel(myObj);
+
+interface Person {
+    name?:string;
+    age?:number;
+}
+function printInfo(info:Person) {
+    console.log(info);
+}
+let info = {
+    'name':'muyy',
+    'age':23
+};
+
+printInfo(info); // {"name": "muyy", "age": 23}
+let info2 = {
+    "name":"muyy"
+};
+printInfo(info2); // {"name": "muyy"}
+
+
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date);
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(h: number, m: number) {}
+}
+
+
+
+aHR0cHM6Ly9naXRodWIuY29tL011WXVueXVu
+
+
+
 
