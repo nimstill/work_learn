@@ -137,3 +137,8 @@ eslint-disable-next-line eqeqeq
 
 // eslint-disable-next-line no-unused-vars
 
+
+###  更新远程分支
+$ git remote update origin --prune  
+
+
