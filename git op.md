@@ -141,4 +141,7 @@ eslint-disable-next-line eqeqeq
 ###  更新远程分支
 $ git remote update origin --prune  
 
-
+### Mac下查看端口占用情况
+命令格式：lsof -i :端口
+lsof -i:8080
+kill -9 pid
