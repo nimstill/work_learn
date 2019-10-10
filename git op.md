@@ -145,3 +145,16 @@ $ git remote update origin --prune
 命令格式：lsof -i :端口
 lsof -i:8080
 kill -9 pid
+
+### Mac zsh: command not found 命令在终端失效
+方法一：
+
+PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+export PATH
+方法二：
+
+exec /bin/zsh
+方法三：
+
+exec /usr/bin/zsh
+
